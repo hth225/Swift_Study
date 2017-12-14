@@ -21,4 +21,25 @@ func hello(_ name : String, time : Int = 4) -> String {
     return string
 }
 
+func sum(_ numbers : Int ...) -> Int {
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+
+func hello(name : String, time : Int){
+    func message(name : String) -> String{
+        return "\(name)님 안녕하세요!"
+    }
+    for _ in 0..<time {
+        print(message(name : name))
+        
+    }
+}
+
 print(hello("blogcin"))
+print(sum(3,5,7,8,4))
+hello(name: "op", time: 3)
+
