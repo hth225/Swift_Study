@@ -45,10 +45,9 @@ hello(name: "op", time: 3)
 
 func hellogenerator(message : String) -> (String, String) -> String {
     //문자열을 받아서 문자열을 반환 (여러개의 파라미터를 받는다면 (String, String)과 같은 형태 사용.
-    return {(fname : String, lname : String) -> String in
+    return { fname, lname in //컴파일러의 타입 추론 덕택에, hellogenerator에서 반환하는 타입을 토대로 어떤 파라미터를 받고 반환하는지 추론하기 때문에 생략 가능.
         //중괄호로 감싼 실행가능한 코드 블럭, 클로저 in 키워드를 이용해서 파라미터, 반환타입영역과 실제 클로저 코드 영역을 분리.
         return fname + lname + message
-        
     }
 }
 
