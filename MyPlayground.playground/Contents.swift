@@ -54,4 +54,40 @@ func hellogenerator(message : String) -> (String, String) -> String {
 let hey = hellogenerator(message: ", Greetings!")
 print(hey("lad", "neo"))
 
+let greet: ((String, String) -> String)? = { $1 + $0 + ", hello!"}
+greet?("mann", "coo")
+
+
+//------------------------------------------------------------------------
+
+
+func manipulate(number : Int, using block: (Int) -> Int) -> Int
+{
+    return block(number)
+}
+
+manipulate(number: 10, using: { (num : Int) -> Int in
+    return num * 2
+})
+
+
+
+//: Playground - noun: a place where people can play
+//-------------------------------------------------------------------------
+// +, - 는 함수로써, (Int, Int) -> Int 형태임.
+
+var currentNumber : Int = 0
+func calc (_ number : Int, _ calcMethod : (Int, Int) -> Int) -> Void { //2. number에 10, calcMethod 에 +가 들어감
+    currentNumber = calcMethod(currentNumber, number) //3. calcMethod(0,10) 이므로 currentNumber = 10
+}
+
+calc(10, +) //1. 파라미터로 10과 + 연산자를 받음
+print(currentNumber)
+
+calc(20, +)
+print(currentNumber)
+
+calc(30, -)
+print(currentNumber)
+
 
