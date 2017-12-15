@@ -43,6 +43,8 @@ print(hello("blogcin"))
 print(sum(3,5,7,8,4))
 hello(name: "op", time: 3)
 
+//-------------------------------------------------------------------------
+
 func hellogenerator(message : String) -> (String, String) -> String {
     //문자열을 받아서 문자열을 반환 (여러개의 파라미터를 받는다면 (String, String)과 같은 형태 사용.
     return { fname, lname in //컴파일러의 타입 추론 덕택에, hellogenerator에서 반환하는 타입을 토대로 어떤 파라미터를 받고 반환하는지 추론하기 때문에 생략 가능.
@@ -50,6 +52,8 @@ func hellogenerator(message : String) -> (String, String) -> String {
         return fname + lname + message
     }
 }
+
+//-------------------------------------------------------------------------
 
 let hey = hellogenerator(message: ", Greetings!")
 print(hey("lad", "neo"))
@@ -89,5 +93,10 @@ print(currentNumber)
 
 calc(30, -)
 print(currentNumber)
+
+//-------------------------------------------------------------------------
+
+
+
 
 
